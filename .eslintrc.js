@@ -1,20 +1,23 @@
 module.exports = {
   env: {
-    es6: true,
+    commonjs: true,
+    es2021: true,
+    node: true,
     'jest/globals': true,
-  },
-  parserOptions: { /* necessary otherwise lints all react jsx */
-    sourceType: 'module',
-    ecmaVersion: 'latest',
-    ecmaFeatures: { jsx: true },
   },
   plugins: ['jest'],
   extends: [
     'airbnb',
-    'airbnb/hooks',
+    'airbnb-base',
   ],
+  overrides: [
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+  },
   rules: {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'import/extensions': ['error', { jsx: 'always' }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     camelcase: ['error', {
       allow: [
