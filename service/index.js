@@ -14,4 +14,5 @@ app.use(express.json());
 app.use('*', router);
 
 app.listen(PORT);
+// eslint-disable-next-line
 console.log(`Server listening at ${LOCAL_URL}:${PORT}`);
