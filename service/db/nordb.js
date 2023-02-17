@@ -36,4 +36,5 @@ let characteristicSchema = mongoose.Schema({
 let characteristicReviewSchema = mongoose.Schema({
   characteristic_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Characteristic' },
   review_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Review' },
+  value: Number,
 });
