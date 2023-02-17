@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // FILL YOUR ROUTE
-app.use('*', router);
+app.use('/api', router);
 
 app.listen(PORT);
 // eslint-disable-next-line
