@@ -5,6 +5,7 @@
   "main": "service/index.js",
   "scripts": {
     "start": "npx nodemon --watch service service/index.js",
+    "startz": "node server/index.js",
     "test": "jest"
   },
   "contributors": [

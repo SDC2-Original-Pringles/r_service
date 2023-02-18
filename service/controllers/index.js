@@ -2,9 +2,11 @@ const models = require('../models');
 
 module.exports = {
   getReviewsByProduct: (req, res) => {
-    console.log(req.query);
-    models.getAll(req.query)
+    // console.log(req.query);
+    // res.status(200).send("Hello")
+    models.getAll(req.query.product_id)
       .then((result) => {
+        console.log(result.rows);
         res.status(200).send(result.data);
       })
       .catch((err) => {
