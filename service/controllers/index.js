@@ -4,10 +4,18 @@ module.exports = {
   getReviewsByProduct: (req, res) => {
     // console.log(req.query);
     // res.status(200).send("Hello")
-    models.getAll(req.query.product_id)
+    let {
+      page,
+      count,
+      sort,
+      product_id,
+    } = req.query;
+    page = page || 1;
+    count = count || 5;
+    models.getAll(product_id, page, count, sort)
       .then((result) => {
-        console.log(result.rows);
-        res.status(200).send(result.data);
+        // console.log(result);
+        res.status(200).send({product: product_id, page: page, count: count, results: result});
       })
       .catch((err) => {
         console.log(err);
@@ -15,9 +23,9 @@ module.exports = {
       });
   },
   getReviewMetaData: (req, res) => {
-    models.getMeta(req.query)
+    models.getMeta(req.query.product_id)
       .then((result) => {
-        res.status(200).send(result.data);
+        res.status(200).send(result);
       })
       .catch((err) => {
         console.log(err);

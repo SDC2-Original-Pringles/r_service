@@ -7,8 +7,8 @@ module.exports = {
   },
   plugins: ['jest'],
   extends: [
-    'airbnb',
-    'airbnb-base',
+    // 'airbnb',
+    // 'airbnb-base',
   ],
   overrides: [
   ],

@@ -12,6 +12,9 @@ app.use(express.json());
 
 // FILL YOUR ROUTE
 app.use('/api', router);
+// app.get('/api', (req, res)=> {
+//   res.status(200).send("Hello")
+// })
 
 app.listen(PORT);
 // eslint-disable-next-line
