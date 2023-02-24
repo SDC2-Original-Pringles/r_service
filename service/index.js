@@ -10,6 +10,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.get(`/${process.env.LOADER_IO}`, (req, res) => {
+  res.send(process.env.LOADER_IO);
+})
 // FILL YOUR ROUTE
 app.use('/api', router);
 // app.get('/api', (req, res)=> {
